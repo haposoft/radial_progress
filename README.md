@@ -9,11 +9,18 @@
 
 [![pub package](https://img.shields.io/pub/v/radial_progress.svg)](https://pub.dev/packages/radial_progress)
 
-🌐 🛜 💻 📱
+Use `radial_progress` package to display pie charts with dynamic progress percentage by enabling animation
 
-## Features
+### Where is it used?
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- In applications that display currency and gold rates to the user
+- In sports applications that calculate the length of a period of time
+- In applications that provide diet to the user
+- In educational applications in order to display the student's academic progress
+- In store applications in the shopping cart section
+- ...
+
+📈 📉 🎛 📱
 
 ## Install Package
 

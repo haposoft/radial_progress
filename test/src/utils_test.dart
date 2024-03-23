@@ -22,10 +22,8 @@ void main() {
           const percent = 0.2;
 
           // act
-          final result = radialProgressLineColors(
-            colors: colors,
-            percent: percent
-          );
+          final result =
+              radialProgressLineColors(colors: colors, percent: percent);
 
           // assert
           expect(result, Colors.red);
@@ -39,10 +37,8 @@ void main() {
           const percent = 0.3;
 
           // act
-          final result = radialProgressLineColors(
-            colors: colors,
-            percent: percent
-          );
+          final result =
+              radialProgressLineColors(colors: colors, percent: percent);
 
           // assert
           expect(result, Colors.orange);
@@ -56,10 +52,8 @@ void main() {
           const percent = 0.5;
 
           // act
-          final result = radialProgressLineColors(
-            colors: colors,
-            percent: percent
-          );
+          final result =
+              radialProgressLineColors(colors: colors, percent: percent);
 
           // assert
           expect(result, Colors.lightGreen);
@@ -73,10 +67,8 @@ void main() {
           const percent = 0.75;
 
           // act
-          final result = radialProgressLineColors(
-            colors: colors,
-            percent: percent
-          );
+          final result =
+              radialProgressLineColors(colors: colors, percent: percent);
 
           // assert
           expect(result, Colors.green);
@@ -90,10 +82,8 @@ void main() {
           const percent = 0.74;
 
           // act
-          final result = radialProgressLineColors(
-            colors: colors,
-            percent: percent
-          );
+          final result =
+              radialProgressLineColors(colors: colors, percent: percent);
 
           // assert
           expect(result, Colors.lightGreen);
@@ -107,10 +97,7 @@ void main() {
           const percent = 0.2;
 
           // act
-          final result = radialProgressLineColors(
-            colors: [],
-            percent: percent
-          );
+          final result = radialProgressLineColors(colors: [], percent: percent);
 
           // assert
           expect(result, Colors.cyan);
@@ -124,10 +111,7 @@ void main() {
           const percent = 1.2;
 
           // act
-          final result = radialProgressLineColors(
-            colors: [],
-            percent: percent
-          );
+          final result = radialProgressLineColors(colors: [], percent: percent);
 
           // assert
           expect(result, Colors.cyan);
@@ -141,20 +125,16 @@ void main() {
           const percent = 1.2;
 
           // act
-          final result = radialProgressLineColors(
-            colors: [
-              Colors.red,
-              Colors.pink,
-              Colors.purple,
-            ],
-            percent: percent
-          );
+          final result = radialProgressLineColors(colors: [
+            Colors.red,
+            Colors.pink,
+            Colors.purple,
+          ], percent: percent);
 
           // assert
           expect(result, Colors.cyan);
         },
       );
-
     },
   );
 
@@ -191,7 +171,7 @@ void main() {
 
       test(
         'It should return `pi`',
-            () {
+        () {
           // arrange
           const matcher = pi;
 
@@ -205,7 +185,7 @@ void main() {
 
       test(
         'It should return `0.0`',
-            () {
+        () {
           // arrange
           const matcher = 0.0;
 

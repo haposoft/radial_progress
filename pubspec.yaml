@@ -1,5 +1,5 @@
 name: radial_progress
-description: "A Flutter library for displaying progress as a circle chart"
+description: "A Flutter library for displaying progress as a circle chart with the ability to dynamize the percentage of progress and personalization"
 version: 0.1.0
 homepage: https://github.com/shervin-h/radial_progress
 repository: https://github.com/shervin-h/radial_progress

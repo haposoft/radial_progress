@@ -46,7 +46,7 @@ enum StartAngle {
 /// Developers can use this function to convert a `StartAngle` enum value into its corresponding
 /// degree value when customizing the starting angle of radial progress indicators.
 double convertStartAngleToDesiredDegree(StartAngle startAngle) {
-  return switch(startAngle) {
+  return switch (startAngle) {
     StartAngle.start => pi,
     StartAngle.end => 0.0,
     StartAngle.top => -pi / 2,
