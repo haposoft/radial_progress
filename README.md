@@ -1,11 +1,8 @@
-![img](https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true)
 
 <img alt="Flutter" src="https://img.shields.io/badge/Flutter-075898?style=flat-squar&logo=flutter&logoColor=white"/>
 
 <p align="center">
-  <img src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true" height="200">
-  <img src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true" height="200">
-  <img src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true" height="200">
+  <img src="https://github.com/shervin-h/radial_progress/blob/main/assets/demo.gif?raw=true" height="400">
 </p>
 
 # Radial Progress
@@ -24,7 +21,7 @@ Add the following line to your `pubspec.yaml` under `dependencies`:
 
 ```yaml
 dependencies:
-  radial_progress: ^0.0.1
+  radial_progress: ^0.1.0
 ```
 
 Then run:
@@ -43,7 +40,7 @@ import 'package:radial_progress/radial_progress.dart';
 
 Now in your flutter code, you can use:
 
-- The `percent` should be between 0.0 and 1.0
+- The `percent` should be between 0.0 and 1.0.
 - If you don't specify the `diameter`, it defaults to 80.
 - By default, the `progressLineWidth` is 10. You can change it, but the maximum limit is up to one third of the diameter.
 - Animation is enabled by default. You can set a duration for it or disable it.
@@ -51,6 +48,7 @@ Now in your flutter code, you can use:
 you can consider a list of colors. Depending on the `percent` feature, this line can take one of the colors from the list.
 If the progress rate is 0%, the color in zeroth index will be taken,
 and if the progress percentage is 100%, the color of the last index will be taken.
+- The `startAngle` attribute specifies the starting point or the angle of drawing the progress line. That is a enum.
 
 <br>
 
@@ -102,12 +100,6 @@ RadialProgressWidget(
   ),
 );
 ```
-
-<br>
-
-<p align="center">
-    <img alt="screenshot2" src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot2.png?raw=true" height="400">
-</p>
 
 ### by Shervin Hassanzadeh
 

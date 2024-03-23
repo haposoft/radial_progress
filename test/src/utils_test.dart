@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 import 'package:radial_progress/src/utils.dart';
@@ -153,6 +155,67 @@ void main() {
         },
       );
 
+    },
+  );
+
+  group(
+    'vase khali naboodane arize',
+    () {
+      test(
+        'It should return `-pi / 2`',
+        () {
+          // arrange
+          const matcher = -1.5707963267948966;
+
+          // act
+          final result = convertStartAngleToDesiredDegree(StartAngle.top);
+
+          // assert
+          expect(result, matcher);
+        },
+      );
+
+      test(
+        'It should return `pi / 2`',
+        () {
+          // arrange
+          const matcher = 1.5707963267948966;
+
+          // act
+          final result = convertStartAngleToDesiredDegree(StartAngle.bottom);
+
+          // assert
+          expect(result, matcher);
+        },
+      );
+
+      test(
+        'It should return `pi`',
+            () {
+          // arrange
+          const matcher = pi;
+
+          // act
+          final result = convertStartAngleToDesiredDegree(StartAngle.start);
+
+          // assert
+          expect(result, matcher);
+        },
+      );
+
+      test(
+        'It should return `0.0`',
+            () {
+          // arrange
+          const matcher = 0.0;
+
+          // act
+          final result = convertStartAngleToDesiredDegree(StartAngle.end);
+
+          // assert
+          expect(result, matcher);
+        },
+      );
     },
   );
 }

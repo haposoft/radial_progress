@@ -56,6 +56,7 @@ class RadialProgressWidget extends StatefulWidget {
     this.enableAnimation = true,
     this.animationDuration,
     this.startAngle,
+    this.callback,
     super.key,
   }) {
     assert(percent >= 0.0 && percent <= 1.0,
@@ -73,6 +74,7 @@ class RadialProgressWidget extends StatefulWidget {
   final bool enableAnimation;
   final Duration? animationDuration;
   final StartAngle? startAngle;
+  final void Function(double)? callback;
 
   @override
   State<RadialProgressWidget> createState() => _RadialProgressWidgetState();
@@ -94,6 +96,12 @@ class _RadialProgressWidgetState extends State<RadialProgressWidget>
       _tweenAnimation =
           Tween(begin: 0.0, end: widget.percent).animate(_animationController!);
       _animationController.forward();
+
+      if (widget.callback != null) {
+        _tweenAnimation.addListener(() {
+          widget.callback!(_tweenAnimation.value);
+        });
+      }
     }
   }
 
