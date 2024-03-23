@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:radial_progress/src/radial_painter.dart';
+import 'package:radial_progress/src/utils.dart';
 
 class RadialProgressWidget extends StatefulWidget {
-  const RadialProgressWidget({
+  RadialProgressWidget({
     required this.percent,
     this.diameter = 80,
     this.margin,
     this.padding,
     this.progressLineWidth = 10,
     this.bgLineColor,
-    this.progressLineColor = Colors.cyan,
+    this.progressLineColors,
     this.centerChild,
     this.enableAnimation = true,
     this.animationDuration,
+    this.startAngle,
     super.key,
-  });
+  }) {
+    assert(percent >= 0.0 && percent <= 1.0,
+        'The percentage should be between 0.0 and 1.0');
+  }
 
   final double percent;
   final double diameter;
@@ -22,10 +27,11 @@ class RadialProgressWidget extends StatefulWidget {
   final EdgeInsets? padding;
   final double progressLineWidth;
   final Color? bgLineColor;
-  final Color progressLineColor;
+  final List<Color>? progressLineColors;
   final Widget? centerChild;
   final bool enableAnimation;
   final Duration? animationDuration;
+  final StartAngle? startAngle;
 
   @override
   State<RadialProgressWidget> createState() => _RadialProgressWidgetState();
@@ -70,8 +76,9 @@ class _RadialProgressWidgetState extends State<RadialProgressWidget>
                     padding: widget.padding,
                     progressLineWidth: widget.progressLineWidth,
                     bgLineColor: widget.bgLineColor,
-                    progressLineColor: widget.progressLineColor,
+                    progressLineColors: widget.progressLineColors,
                     centerChild: widget.centerChild,
+                    startAngle: widget.startAngle,
                   );
                 },
               )
@@ -81,8 +88,9 @@ class _RadialProgressWidgetState extends State<RadialProgressWidget>
                 padding: widget.padding,
                 progressLineWidth: widget.progressLineWidth,
                 bgLineColor: widget.bgLineColor,
-                progressLineColor: widget.progressLineColor,
+                progressLineColors: widget.progressLineColors,
                 centerChild: widget.centerChild,
+                startAngle: widget.startAngle,
               );
       },
     );
@@ -97,8 +105,9 @@ class RadialProgress extends StatelessWidget {
     this.padding,
     this.progressLineWidth = 10,
     this.bgLineColor,
-    this.progressLineColor = Colors.cyan,
+    this.progressLineColors,
     this.centerChild,
+    this.startAngle,
     super.key,
   }) : _gapPadding = (progressLineWidth > (diameter / 3))
             ? diameter / 6
@@ -110,8 +119,9 @@ class RadialProgress extends StatelessWidget {
   final EdgeInsets? padding;
   final double progressLineWidth;
   final Color? bgLineColor;
-  final Color progressLineColor;
+  final List<Color>? progressLineColors;
   final Widget? centerChild;
+  final StartAngle? startAngle;
 
   final double _gapPadding;
 
@@ -124,12 +134,16 @@ class RadialProgress extends StatelessWidget {
       padding: padding,
       child: CustomPaint(
         foregroundPainter: RadialPainter(
-          bgColor: bgLineColor ?? Colors.grey.shade200.withOpacity(0.5),
-          lineColor: progressLineColor,
+          bgColor: bgLineColor ?? Colors.grey.shade200.withOpacity(0.6),
+          lineColor: radialProgressLineColors(
+            colors: progressLineColors ?? [],
+            percent: percent,
+          ),
           percent: percent,
           width: (progressLineWidth > (diameter / 3))
               ? diameter / 3
               : progressLineWidth,
+          startAngle: startAngle,
         ),
         child: Center(
           child: Padding(

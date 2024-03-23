@@ -1,18 +1,12 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+[//]: # (![img]&#40;https://github.com/shervin-h/radial_progress/blob/main/assets/radial_progress.jpg&#41;)
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<img alt="Flutter" src="https://img.shields.io/badge/Flutter-075898?style=flat-squar&logo=flutter&logoColor=white"/>
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+# Radial Progress
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+[![pub package](https://img.shields.io/pub/v/radial_progress.svg)](https://pub.dev/packages/radial_progress)
+
+🌐 🛜 💻 📱
 
 ## Features
 
@@ -20,20 +14,54 @@ TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+first import it
+
+```dart
+import 'package:radial_progress/radial_progress.dart';
+```
+
+## Install Package
+
+add the following line to your `pubspec.yaml` under `dependencies`:
+
+```yaml
+dependencies:
+  radial_progress: ^0.0.1
+```
+
+then run:
+
+```
+flutter pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+now in your dart code, you can use:
 
 ```dart
 const like = 'sample';
 ```
 
-## Additional information
+### by Shervin Hassanzadeh
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+contact me at
+<br>
+
+  <a href="https://www.linkedin.com/in/shervin-hassanzadeh/">
+    <img alt="linkedin" src="https://img.shields.io/badge/linkedin-0077B5.svg?style=flat-squar&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="mailto:shervin.hz07@gmail.com">
+    <img alt="Email" src="https://img.shields.io/badge/Email-D14836?style=flat-squar&logo=gmail&logoColor=white"/>
+  </a>
+  <a href="https://t.me/shervin_hz07">
+    <img alt="telegram" src="https://img.shields.io/badge/Telegram-2B9FD1?style=flat-squar&logo=telegram&logoColor=white" />
+  </a>
+  <a href="https://github.com/shervin-h">
+    <img alt="github" src="https://img.shields.io/badge/github-121011.svg?style=flat-squar&logo=github&logoColor=white"/>
+  </a>
+  <a href="https://stackoverflow.com/users/13066224/shervin">
+    <img alt="stackoverflow" src="https://img.shields.io/badge/Stackoverflow-ef8236?style=flat-squar&logo=stackoverflow&logoColor=white" />
+  </a>
+
+<br>
