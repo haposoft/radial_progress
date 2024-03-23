@@ -1,6 +1,12 @@
-[//]: # (![img]&#40;https://github.com/shervin-h/radial_progress/blob/main/assets/radial_progress.jpg&#41;)
+![img](https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true)
 
 <img alt="Flutter" src="https://img.shields.io/badge/Flutter-075898?style=flat-squar&logo=flutter&logoColor=white"/>
+
+<p align="center">
+  <img src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true" height="200">
+  <img src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true" height="200">
+  <img src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true" height="200">
+</p>
 
 # Radial Progress
 
@@ -12,24 +18,16 @@
 
 TODO: List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
-
-first import it
-
-```dart
-import 'package:radial_progress/radial_progress.dart';
-```
-
 ## Install Package
 
-add the following line to your `pubspec.yaml` under `dependencies`:
+Add the following line to your `pubspec.yaml` under `dependencies`:
 
 ```yaml
 dependencies:
   radial_progress: ^0.0.1
 ```
 
-then run:
+Then run:
 
 ```
 flutter pub get
@@ -37,15 +35,83 @@ flutter pub get
 
 ## Usage
 
-now in your dart code, you can use:
+Import it
 
 ```dart
-const like = 'sample';
+import 'package:radial_progress/radial_progress.dart';
 ```
+
+Now in your flutter code, you can use:
+
+- The `percent` should be between 0.0 and 1.0
+- If you don't specify the `diameter`, it defaults to 80.
+- By default, the `progressLineWidth` is 10. You can change it, but the maximum limit is up to one third of the diameter.
+- Animation is enabled by default. You can set a duration for it or disable it.
+- Feature `progressLineColors` is nullable. For the color of the progress line,
+you can consider a list of colors. Depending on the `percent` feature, this line can take one of the colors from the list.
+If the progress rate is 0%, the color in zeroth index will be taken,
+and if the progress percentage is 100%, the color of the last index will be taken.
+
+<br>
+
+<p align="center">
+    <img alt="screenshot1" src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot1.png?raw=true" height="400">
+</p>
+
+```dart
+RadialProgressWidget(
+  percent: 0.35,
+  diameter: 180,
+  bgLineColor: Colors.cyan.withOpacity(0.2),
+  progressLineWidth: 16,
+  startAngle: StartAngle.top,
+  centerChild: const Text(
+    '\$ 547.52 - \$ 800.0',
+    maxLines: 1,
+    style: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+);
+```
+
+<br>
+
+<p align="center">
+    <img alt="screenshot2" src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot2.png?raw=true" height="400">
+</p>
+
+```dart
+RadialProgressWidget(
+  percent: 0.7,
+  diameter: 180,
+  bgLineColor: Colors.grey.withOpacity(0.2),
+  progressLineWidth: 24,
+  startAngle: StartAngle.top,
+  progressLineColors: const [
+    Colors.green,
+  ],
+  centerChild: const Text(
+    '70 %',
+    maxLines: 1,
+      style: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+      ),
+  ),
+);
+```
+
+<br>
+
+<p align="center">
+    <img alt="screenshot2" src="https://github.com/shervin-h/radial_progress/blob/main/assets/screenshot2.png?raw=true" height="400">
+</p>
 
 ### by Shervin Hassanzadeh
 
-contact me at
+Contact me at
 <br>
 
   <a href="https://www.linkedin.com/in/shervin-hassanzadeh/">
