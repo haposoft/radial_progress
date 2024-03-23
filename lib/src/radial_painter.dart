@@ -5,18 +5,30 @@ import 'package:radial_progress/src/utils.dart';
 
 /// ## [RadialPainter] Class Documentation
 ///
-/// The `RadialPainter` class is a custom painter used to draw a radial progress indicator.
-/// It paints a background circle and a progress arc on a given canvas based on the specified
-/// parameters.
+/// The `RadialPainter` class is a custom painter responsible for painting a radial progress indicator
+/// on a canvas.
 ///
-/// Parameters:
+/// It draws a circular background and a portion of the circle representing the progress.
 ///
-/// - `bgColor`: The background color of the progress indicator.
-/// - `lineColor`: The color of the progress arc indicating the completion.
-/// - `percent`: The percentage of completion (0.0 to 1.0) represented by the progress arc.
-/// - `width`: The width of the progress indicator lines.
+/// ### Parameters:
+/// - `bgColor`: The background color of the circular progress indicator.
+/// - `lineColor`: The color of the progress line.
+/// - `percent`: The percentage of progress completed (value between 0.0 and 1.0).
+/// - `width`: The width of the progress line.
+/// - `startAngle`: The starting angle of the progress indicator. It can be one of the values
+///   from the `StartAngle` enum (default is `StartAngle.top`).
 ///
-/// Usage Example:
+/// ### Usage Example:
+///
+/// ```dart
+/// RadialPainter(
+///   bgColor: Colors.grey,
+///   lineColor: Colors.blue,
+///   percent: 0.75,
+///   width: 10.0,
+///   startAngle: StartAngle.start,
+/// );
+/// ```
 ///
 /// ```dart
 /// CustomPaint(
@@ -33,13 +45,14 @@ import 'package:radial_progress/src/utils.dart';
 /// )
 /// ```
 ///
-/// Notes:
-///
 /// - The `paint` method draws the background circle and progress arc on the canvas.
 /// - The background circle's color and the progress arc's color and width are specified by the
 ///   `bgColor`, `lineColor`, and `width` parameters, respectively.
 /// - The completion percentage (`percent`) determines the angle of the progress arc.
 /// - This class extends `CustomPainter` and must be used within a `CustomPaint` widget.
+///
+/// Developers can use this class to create custom radial progress indicators with various colors,
+/// line widths, and starting angles.
 class RadialPainter extends CustomPainter {
   final Color bgColor;
   final Color lineColor;
@@ -78,7 +91,7 @@ class RadialPainter extends CustomPainter {
     double sweepAngle = 2 * pi * percent;
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
-      convertStartAngleToDesiredDegree(startAngle ?? StartAngle.top), //-pi / 2,
+      convertStartAngleToDesiredDegree(startAngle ?? StartAngle.top),
       sweepAngle,
       false,
       completeLinePaint,
