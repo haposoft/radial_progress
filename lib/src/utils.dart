@@ -80,7 +80,7 @@ Color radialProgressLineColors({
   required List<Color> colors,
   required double percent,
 }) {
-  Color progressLineColor = Colors.cyan;
+  Color progressLineColor = colors.first;
 
   if (colors.isEmpty) {
     return progressLineColor;
